@@ -2,6 +2,8 @@
 
 > A Vite-based Multi-Page Application (MPA) demo showcasing how to combine custom plugins ([@zhoumutou/vite-plugin-mpa](https://github.com/zhoumutou/vite-plugin-mpa) & [@zhoumutou/vite-plugin-inline](https://github.com/zhoumutou/vite-plugin-inline)) to achieve multi-entry development, build-time page splitting, and critical resource inlining.
 
+[中文](./README.md) | English
+
 ## Table of Contents
 
 - [mpa-demo (Multi-Page App Demo)](#mpa-demo-multi-page-app-demo)

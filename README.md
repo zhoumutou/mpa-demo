@@ -2,6 +2,8 @@
 
 > 基于 Vite 的多页面（MPA）示例项目，演示如何结合自定义插件（[@zhoumutou/vite-plugin-mpa](https://github.com/zhoumutou/vite-plugin-mpa) & [@zhoumutou/vite-plugin-inline](https://github.com/zhoumutou/vite-plugin-inline)）实现多入口开发、构建与内联优化。
 
+中文 | [English](./README.en.md)
+
 ## 目录
 
 - [mpa-demo](#mpa-demo)
