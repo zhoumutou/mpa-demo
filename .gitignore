@@ -1,0 +1,17 @@
+# Logs
+logs
+*.log
+pnpm-debug.log*
+
+node_modules
+**/.DS_Store
+dist
+
+.env
+.env.*.local
+
+src/types/auto-imports.d.ts
+src/types/auto-imports.json
+src/types/components.d.ts
+
+*.tsbuildinfo
