@@ -1,7 +1,7 @@
 {
   "name": "@zhoumutou/mpa-demo",
   "type": "module",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "基于 Vite 的多页面（MPA）示例项目，演示如何结合自定义插件实现多入口开发、构建与内联优化。",
   "author": "zhoumutou",
   "license": "MIT",
