@@ -79,7 +79,14 @@ export default defineConfig(({ mode }) => {
         },
       }),
       Mpa(),
-      isProduction && isHtmlInline && Inline(),
+      isProduction && isHtmlInline && Inline({
+        minify: {
+          mangle: {
+            toplevel: true,
+          },
+        },
+        cdataJs: true,
+      }),
 
       isProduction && !isDebugMode && Remove({ consoleType: ['debug', 'info', 'log'] }),
       !isProduction && VueDevTools(),

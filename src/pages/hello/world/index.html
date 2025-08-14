@@ -6,8 +6,14 @@
   <body>
     <div id="app"></div>
     <!-- template -->
-    <script>
-      console.log('from template')
+    <script th:inline="javascript">
+      ;(() => {
+        const envVars = {
+          apiBase: /*[[${apiBase}]]*/ '%VITE_API_BASE%',
+          appName: /*[[${appName}]]*/ '%VITE_APP_NAME%',
+        }
+        console.log('envVars', envVars)
+      })()
     </script>
   </body>
 </html>
