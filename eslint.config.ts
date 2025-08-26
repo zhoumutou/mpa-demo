@@ -15,7 +15,6 @@ export default antfu(
     },
     ignores: [
       '**/dist',
-      '**/esm',
     ],
   },
   {
@@ -48,7 +47,7 @@ export default antfu(
       'style/quotes': ['warn'],
       'style/comma-dangle': ['warn', 'always-multiline'],
       'style/arrow-parens': ['warn', 'as-needed'],
-      'style/brace-style': ['warn', '1tbs', { allowSingleLine: false }],
+      'style/brace-style': ['warn', 'stroustrup', { allowSingleLine: false }],
       'style/quote-props': ['warn', 'as-needed', { keywords: false, unnecessary: false }],
       'style/no-multiple-empty-lines': ['warn'],
     },

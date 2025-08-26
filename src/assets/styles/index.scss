@@ -1,1 +1,3 @@
-@use './app.scss';
+@use './theme/element-plus.scss';
+
+@import './app.scss' layer(default);

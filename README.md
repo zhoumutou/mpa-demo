@@ -35,8 +35,7 @@
 - 最低 Node 版本要求：>= 22
 - 多页面自动发现（借助 `@zhoumutou/vite-plugin-mpa`）
 - 关键资源可选择内联（借助 `@zhoumutou/vite-plugin-inline`）
-- .env 环境配置区分（dev / build）
-- 统一 Lint（`pnpm lint`）
+- CSS层包裹（借助 `@zhoumutou/postcss-wrap-layer`）
 
 ## 环境要求
 
@@ -67,13 +66,13 @@ pnpm dev
 
 ## 常用脚本
 
-| 命令         | 说明                             |
-| ------------ | -------------------------------- |
-| `pnpm dev`   | 开发模式，启动本地多页面服务     |
-| `pnpm check` | 质量检查                         |
-| `pnpm lint`  | 代码风格/质量检查                |
-| `pnpm build` | 生产构建                         |
-| `pnpm debug` | 启动带调试（可能含额外日志）模式 |
+| 命令             | 说明                             |
+| ---------------- | -------------------------------- |
+| `pnpm dev`       | 开发模式，启动本地多页面服务     |
+| `pnpm typecheck` | 质量检查                         |
+| `pnpm lint`      | 代码风格/质量检查                |
+| `pnpm build`     | 生产构建                         |
+| `pnpm debug`     | 启动带调试（可能含额外日志）模式 |
 
 ## 环境变量说明
 
@@ -81,7 +80,7 @@ pnpm dev
 # .env.example (复制为 .env 后再按需修改)
 # 可放置：
 # VITE_API_BASE_URL=https://api.example.com
-# VITE_INLINE_THRESHOLD=1024
+# VITE_HTML_INLINE=true
 ```
 
 建议：
@@ -133,6 +132,7 @@ pnpm dev
 
 - 多页面插件：[@zhoumutou/vite-plugin-mpa](https://github.com/zhoumutou/vite-plugin-mpa)
 - 内联插件：[@zhoumutou/vite-plugin-inline](https://github.com/zhoumutou/vite-plugin-inline)
+- CSS层包裹插件：[@zhoumutou/postcss-wrap-layer](https://github.com/zhoumutou/postcss-wrap-layer)
 
 ## License
 

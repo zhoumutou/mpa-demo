@@ -22,7 +22,8 @@ export default defineConfig(({ mode }) => {
   const __dirname = fileURLToPath(new URL('.', import.meta.url))
   const env = loadEnv(mode, __dirname, '')
 
-  const isDebugMode = mode === 'debug'
+  const isDebug = env.VITE_APP_DEBUG === 'true'
+  const isReport = env.VITE_APP_REPORT === 'true'
   const isProduction = env.NODE_ENV === 'production'
   const isHtmlInline = env.VITE_HTML_INLINE === 'true'
 
@@ -31,15 +32,21 @@ export default defineConfig(({ mode }) => {
   const customIconNamespace = 'my'
 
   return {
-    // appType: 'mpa',
-    define: {
-      'import.meta.env.API_BASE': JSON.stringify(env.API_BASE),
-    },
     server: {
       host: '0.0.0.0',
       strictPort: true,
       port: Number.parseInt(env.PORT || '') || undefined,
       cors: true,
+    },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: [
+            `@use '@/assets/styles/layer.css';`,
+            `@use '@/assets/styles/theme/element-plus.scss' as *;`,
+          ].join(''),
+        },
+      },
     },
     plugins: [
       // Vue({ include: [/\.vue$/, /\.md$/] }),
@@ -79,18 +86,11 @@ export default defineConfig(({ mode }) => {
         },
       }),
       Mpa(),
-      isProduction && isHtmlInline && Inline({
-        minify: {
-          mangle: {
-            toplevel: true,
-          },
-        },
-        cdataJs: true,
-      }),
+      isProduction && isHtmlInline && Inline({ cdataJs: true }),
 
-      isProduction && !isDebugMode && Remove({ consoleType: ['debug', 'info', 'log'] }),
+      isProduction && !isDebug && Remove({ consoleType: ['debug', 'info', 'log'] }),
       !isProduction && VueDevTools(),
-      isDebugMode && analyzer(),
+      isReport && analyzer(),
     ],
     resolve: {
       alias: {
@@ -100,7 +100,6 @@ export default defineConfig(({ mode }) => {
     base: isProduction ? './' : '/',
     build: {
       emptyOutDir: true,
-      sourcemap: isDebugMode,
       minify: true,
       modulePreload: false,
     },

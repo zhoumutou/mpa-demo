@@ -1,0 +1,32 @@
+@utility translate-center {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@utility translate-x-center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@utility translate-y-center {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@utility flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@utility flex-x-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@utility flex-y-center {
+  display: flex;
+  align-items: center;
+}

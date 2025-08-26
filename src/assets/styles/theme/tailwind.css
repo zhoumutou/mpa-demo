@@ -1,0 +1,8 @@
+@theme {
+  --color-primary: rgb(79 70 229);
+  --color-success: rgb(0 191 102);
+  --color-info: rgb(24 144 255);
+  --color-warning: rgb(250 173 20);
+  --color-danger: rgb(255 50 70);
+  --color-error: rgb(255 50 70);
+}
