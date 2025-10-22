@@ -1,6 +1,6 @@
 import path from 'node:path'
 import { URL, fileURLToPath } from 'node:url'
-import { defineConfig, loadEnv } from 'rolldown-vite'
+import { defineConfig, loadEnv } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import VueJsx from '@vitejs/plugin-vue-jsx'
 import Tailwindcss from '@tailwindcss/vite'

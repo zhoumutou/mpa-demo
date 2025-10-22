@@ -23,6 +23,7 @@ export default antfu(
       'vue/block-order': ['error', { order: [['script', 'template'], 'style'] }],
       'vue/singleline-html-element-content-newline': ['off'],
       'vue/component-api-style': ['warn'],
+      'vue/define-macros-order': ['off'],
     },
   },
   {
@@ -41,6 +42,8 @@ export default antfu(
 
       'unused-imports/no-unused-imports': ['warn'],
       'unused-imports/no-unused-vars': ['warn'],
+
+      'curly': ['warn', 'all'],
 
       'style/semi': ['warn'],
       'style/key-spacing': ['warn'],
